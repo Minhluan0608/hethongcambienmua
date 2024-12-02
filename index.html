@@ -1,0 +1,121 @@
+     <!DOCTYPE html>
+     <html>
+     <head>
+
+     <title>Cảm biến mưa tự động</title>
+
+     </head>
+
+     <body style="background-color:#ccffff;">
+
+     <h1><p style="color:#0000cc;text-align:center;font-size:190%;text-transform:uppercase;"><b>Hệ thống cảm biến mưa tự động</b></p></h1>
+
+     <h2><p style="color:#5959de;text-align:center;font-size:185%;"><b><ins>I.Giới thiệu</ins></b></p></h2>
+         <p style="text-align:left;font-size:180%"> &nbsp;&nbsp;&nbsp;&nbsp;<i> Mưa </i> là một hiện tượng thời tiết vô cùng quen thuộc mà mỗi sinh vật trên hành tinh, nhất là con người đều có thể cảm nhận được bằng nhiều thứ, có thể bằng thị giác, thính giác và nhất là xúc giác. Việc chúng ta có thể cảm nhận mưa bằng xúc giác có thể coi là một dạng của <ins><i>hiện tượng cảm biến </ins></i>.<br>&nbsp;&nbsp;&nbsp;&nbsp;Từ đây, <b> <ins> <i> máy cảm biến mưa </b> </ins> </i> đã ra đời nhằm phục vụ con người với nhiều mục đích khác nhau. Một trong những mục đích được chúng em ứng dụng vào mô hình hôm nay chính là: Nhận biết mưa và tự động kéo sào phơi đồ vào vị trí khô ráo mà không cần sự có mặt của con người.</p>
+         <center><img src="https://content.instructables.com/F3T/8V0J/LZJV0B6M/F3T8V0JLZJV0B6M.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=MjAyNC0wOC0wNyAxMDowNjoyNi4w" width="900" height="400"></center>
+         <p style="text-align:center;font-size:130%;"><i>Ảnh minh họa
+       <br><a href="https://www.instructables.com/Automated-Rain-Shield-for-Laundry-Using-Arduino/">Nguồn: instructables.com</i></a></p>
+
+     <h3><p style="color:#5959de;text-align:center;font-size:185%;"><b><ins>II.Chi tiết sản phẩm</b></ins></p></h3>
+      <br><p style="text-align: left; font-size: 183%"><ins><b> Lưu ý </ins></b>
+          <br>  Để đảm bảo an toàn và mang lại lợi ích khi sử dụng:
+          <br>  &#10102  Đọc kỹ hướng dẫn sử dụng.
+          <br> &#10103  Thực hiện những khuyến cáo và quy trình được nêu ra.
+          <br> &#10104  Đặc biệt chú ý tới thông điệp an toàn.																					 
+     <h4><p style="text-align:left; font-size:183%;color:#000000;"> <ins>1/Chuẩn bị dụng cụ</ins></p></h4>
+         <p style="text-align:left;font-size:180%;">&nbsp;&nbsp;&nbsp;&nbsp; Việc chuẩn bị dụng cụ cho một mô hình rất quan trọng, nó không chỉ quyết định đến chất lượng đầu ra của sản phẩm, mà việc có được những dụng cụ chất lượng còn giúp cho người làm mô hình không bị lãng phí tài chính vì những hư hỏng không đáng có.
+         <br>&nbsp;&nbsp;&nbsp;&nbsp;Bạn có thể mua dụng cụ ở các cửa hàng hoặc các trang web online, nhưng dù có bằng cách nào thì chúng tôi khuyên bạn nên tìm đến những nơi uy tín và kiểm tra thật kỹ các thông số, chất lượng sản phẩm trước khi quyết định mua.
+         <p style="text-align:center; font-size:179%;"><b><ins><i> Danh sách dụng cụ</b></ins></i>
+       <br><i>Lưu ý: Những thông số và hình ảnh chúng tôi cung cấp chỉ mang tính chất tham khảo.Quý vị có thể lựa chọn những dụng cụ mang thông số khác tùy theo nhu cầu.</i></p>
+       <p style="text-align:left;font-size:180%;"><ins><b>a/ Bảng mạch Arduino Uno R3</ins></b></p>
+            <center><img src="https://i.imgur.com/NOQGG75.jpeg;"width="500" height="300">
+          <p style="text-align:center;font-size:130%;"><i>Ảnh minh họa</i></p></center>
+
+         <p style="text-align:left;font-size:180%;"><i>&nbsp; a1/ Chip </i>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9755 Chip điều khiển chính: ATmega328P
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9755 Chip nạp và giao tiếp UART: ATmega16U2
+            <br> •	Nguồn nuôi mạch: 5VDC từ cổng USB hoặc nguồn ngoài cắm từ giắc tròn DC ( nếu sử dụng nguồn ngoài từ giắc tròn DC Hshop.vn khuyên bạn nên cấp nguồn từ 6~9VDC để đảm bảo mạch hoạt động tốt, nếu bạn cắm 12VDC thì IC ổn áp rất nóng, dễ cháy và gây hư hỏng mạch ).
+          <br><i>&nbsp; a2/ Số chân </i>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9758 Số chân Digital I/O: 14  (    trong đó 6 chân có khả năng xuất xung PWM ). 
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9758 Số chân PWM Digital I/O: 6
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9758 Số chân Analog Input: 6
+          <br><i>&nbsp; a3/ Dòng điện DC </i>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9755 Dòng điện DC Current trên mỗi chân I/O: 20 mA   
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9755 Dòng điện DC Current chân 3.3V: 50 mA
+          <br> <i>&nbsp;a4/ Điện áp:</i>  5-12VD
+          <br> <i>&nbsp;a5/ Kích thước:</i>  68.6 x 53.4 mm
+          <br> <i>&nbsp;a6/ Flash Memory:</i>  32KB
+          <br> <i>&nbsp;a7/ SRAM:</i>  2KB
+          <br><i>&nbsp;a8/ EEPROM:</i>  1KB
+          <br<i>&nbsp;a9/ Clock Speed:</i>  16MHz
+          <br><i>&nbsp;a10/ LED_BUILTIN:</i>  13
+        </p>
+        <p style="text-align:left;font-size:180%;"><ins><b>b/ Động cơ RC Servo 9G</ins></b></p>
+        <center><img src="https://i.imgur.com/2jtnCWF.jpeg" width="500" height="300">
+          <p style="text-align:center;font-size:130%;"><i>Ảnh minh họa</i>
+          <br><a href="https://hshop.vn/dong-co-rc-servo-9g">Nguồn: hshop.vn</a></p>
+            <p style="text-align:left;font-size:180%;"<i> &nbsp;b1/ Điện áp:</i> 4.8V-5V (DC)
+          <br> <i>&nbsp;b2/ Tốc độ:</i>  500 RPM
+          <br> <i>&nbsp;b3/ Lực kéo:</i>  1.6 Kg.cm
+          <br> <i>&nbsp;b4/ Kích thước</i>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9758 Dài: 21mm
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9758 Rộng: 12mm
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9758 Cao: 22mm
+          <br> <i>&nbsp;b5/ Khối lượng:</i>  9 gam
+        </p>
+        <p style="text-align:left;font-size:180%;"><ins><b>c/ Bộ cảm biến mưa</ins></b></p>
+        <center><img src="https://nshopvn.com/wp-content/uploads/2019/03/cam-bien-mua-5jdk-3-600x600.jpg" width="500" height="300">
+        <p style="text-align:center;font-size:130%;"><i>Ảnh minh họa</i>
+        <br><a href="https://amazen.com.vn/cam-bien-mua.html?srsltid=AfmBOorqlLLWcPimk73OUB97O3MLYNZNt7qNA_llokp_kqCpDWhXa2mh">Nguồn: amazen</a></p>
+            <p style="text-align:left;font-size:180%;"> <i>c1/ Điện áp:</i>  5VDC
+          <br> <i>&nbsp;c2/ Kích thước tấm cảm biến:</i>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9755 Dài: 54mm.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9755 Rộng: 40mm.
+          <br> <i>c3/ Kích thước board PCB</i>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9758 Dài: 30mm.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; &#9758 Rộng: 16mm.
+            <br> &#9758 Tín hiệu đầu ra: Digital TTL (0VDC / 5VDC) và đầu ra Analog A0 trả giá trị điện áp tuyến tính theo lượng nước tiếp xúc với cảm biến.
+            <br> &#9758 Lỗ cố định bu lông dễ dàng để cài đặt.
+            <br> &#9758 Có đèn báo hiệu nguồn và đầu ra 
+            <br> &#9758 Độ nhạy có thể được điều chỉnh thông qua chiết áp
+            <br> &#9758 LED sáng lên khi không có mưa đầu ra cao, có mưa, đầu ra thấp LED tắt. 
+        </p>
+        <p style="text-align:left;font-size:180%;"><ins><b>d/ Các vật dụng cần thiết khác</ins></b></p>
+            <p style="text-align:left;font-size:180%;">&nbsp;&nbsp;&nbsp;&nbsp;&#10147 d1/ Dây điện
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&#10147 d2/ Keo hotmelt
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&#10147 d3/ Keo hai mặt
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&#10147 d4/ Bìa carton
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&#10147 d5/ Súng bắn keo
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&#10147 d6/ Giấy gấp quần áo
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&#10147 d7/ Kéo
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&#10147 d8/ Băng keo đen
+        </p>
+
+
+
+     <h5><p style="text-align:left;font-size:183%;"><ins>2.Các bước thực hiện</ins></p></h5>
+     <center><img src="https://i.imgur.com/wxRudqW.jpeg" width=400 height=400></center>
+        <p style="text-align:center;font-size:174%;"><ins>Bước 1: Lắp ráp bảng mạch</ins></p>
+        <p style="text-align:left ;font-size:174%"><ins>1.1: Kết nối động cơ Servo</ins></p>
+         <p style="text-align:left ;font-size:174%"> &#10141 Kết nối dây màu đỏ của servo với chân 5V trên Arduino và dây màu đen hoặc nâu của servo với chân GND trên Arduino.
+         <br> &#10141 Bây giờ, hãy kết nối dây màu vàng hoặc cam của servo với chân 9 trên Arduino. Chân này sẽ gửi tín hiệu điều khiển đến servo để di chuyển đến vị trí mong muốn.
+         <br> <ins>1.2: Kết nối cảm biến</ins>
+         <br>  &#10141 Kết nối chân VCC của cảm biến mưa với chân 5V trên Arduino và chân GND của cảm biến mưa với một trong các chân GND (đất) trên Arduino.
+          <br> &#10141 Đối với Tín hiệu, hãy kết nối chân đầu ra kỹ thuật số (D0) của cảm biến mưa với chân 2 trên Arduino. Pin này sẽ đọc đầu ra của cảm biến để phát hiện mưa và kích hoạt Servo. </p>
+          <img src="https://i.imgur.com/wN2NEiT.jpeg">
+        <center><p style="text-align:center;font-size:174%;"><ins>Bước 2: Viết chương trình Arduino kết hợp vào mạch</ins></center></p>
+         <p style="text-align:left; font-size: 174%"> &#10141 Để đọc cảm biến trong hàm vòng lặp, chúng ta kiểm tra cảm biến mưa để xem nó có phát hiện mưa không (lưu thông tin này trong sensorValue) và in giá trị cảm biến vào Serial Monitor để gỡ lỗi.
+          <br> &#10141 Bạn có thể kiểm tra các giá trị bằng cách kết nối arduino với máy tính và mở Serial Monitor, nhỏ nước vào cảm biến và nó sẽ hiển thị một số giá trị trên màn hình.
+          <br> &#10141 Bây giờ để di chuyển Servo, nếu cảm biến phát hiện mưa (giá trị cảm biến THẤP), chúng ta di chuyển servo đến góc 90 độ để che quần áo.
+          <br> &#10141 Nếu không phát hiện mưa (giá trị cảm biến CAO), chúng ta di chuyển servo trở lại góc 0 độ để che quần áo.</p>
+        <center><img src="https://i.imgur.com/OWhKKa2.jpeg" width=400 height=400 ></center>
+        <ins><center><p style="text-align:center;font-size:174%;">Bước 3: Làm nhà</center></p></ins>
+        <br><p style="font-size:174%"><ins>Bước 4: Gắn mạch vào ngôi nhà.
+          <br>Bước 5: Kích hoạt cơ chế hoạt động.</ins></p>
+
+     </body>
+     </html>
+
+
+
+
